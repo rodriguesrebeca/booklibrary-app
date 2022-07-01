@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  docker-postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=db
+    ports:
+      - 5432:5432
+    networks:
+      - booklibrary-app
+
+networks:
+  booklibrary-app:
+    driver: bridge
